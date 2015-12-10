@@ -237,10 +237,9 @@ To help avoid issues when using z-index, assign z-indexes according to the eleme
 - UI tweaks (close button, icon etc) = 0 - 9
 - Tooltips = 10 - 19
 - Takeovers = 20 - 29
-- Overlays = 30 - 39
-- Modals = 40 - 49
+- Modals = 30 - 39
 
-From this, a UI component ranging between 0-9 will be relative to it's parent layer.
+The 9 in each level should be reserved as an override, acting as an `!important`. This way, we can ensure an element is higher than all others in that layer and previous layers.
 
 **Example**
 
@@ -255,6 +254,10 @@ From this, a UI component ranging between 0-9 will be relative to it's parent la
 
 .tooltip {
   z-index: 10;
+}
+
+.tooltip--override {
+  z-index: 19;
 }
 ```
 
