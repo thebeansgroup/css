@@ -234,10 +234,12 @@ When using colours, do not define your own colours. Instead use the Plinth colou
 
 To help avoid issues when using z-index, assign z-indexes according to the elements layer. The layers are are in groups of 10s as follows:
 
+```
 - UI        = 0 - 9
 - Tooltips  = 10 - 19
 - Takeovers = 20 - 29
 - Modals    = 30 - 39
+```
 
 The 9 in each level should be reserved as an override, acting as an `!important`. This way, we can ensure an element is higher than all others in that layer and previous layers.
 
